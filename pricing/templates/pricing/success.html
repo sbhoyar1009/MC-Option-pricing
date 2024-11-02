@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1>Success!</h1>
+        <p>Your parameters have been submitted successfully, and the option pricing calculation has been performed.</p>
+        <h2>Option Pricing Results</h2>
+        <p>Ticker: {{ ticker }}</p>
+        <p>Expiry Date: {{ expiry_date }}</p>
+        <p>Risk-Free Rate: {{ risk_free_rate }}</p>
+        <p>Volatility: {{ volatility }}</p>
+        <p>Option Price: {{ option_price }}</p>
+        <a href="/" class="btn btn-primary">Go Back</a>
+        <h3>Historical Data Plot</h3>
+        <img src="{% static 'plots/'|add:ticker|add:'_historical_data.png' %}" alt="Historical Price Data">
+
+    </div>
+</body>
+
+</html>
